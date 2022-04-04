@@ -86,12 +86,13 @@ We have installed the following Beats on these machines:
 - Filebeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+-Metricbeat reports system and service statistics about the Web VMs to the ELK stack VM.
+-Filebeat parses and forwards system logs from the Web VMs to the ELK Stack in an easy to read format.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the pentest.yml file to /etc/ansible.
+- Copy the install-elk.yml file to /etc/ansible.
 - Update the hosts file to include the IP addresses on your virtual machines.
-- Run the playbook, and navigate to http://[yourloadbalancerip]/setup.php to check that the installation worked as expected.
+- Run the playbook, and navigate to http://[yourloadbalancerip]:5601/app/kibana to check that the installation worked as expected.
